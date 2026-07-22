@@ -1,1 +1,1 @@
-readelf -WS target_binary
+readelf -WS task1
