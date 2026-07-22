@@ -21,7 +21,7 @@ magic_number=$(printf '%s\n' "$elf_header" | awk -F'Magic:[[:space:]]*' '/Magic:
 
 class=$(printf '%s\n' "$elf_header" | awk -F':' '/Class:/{gsub(/^[[:space:]]+/, "", $2); print $2}')
 
-byte_order=$(printf '%s\n' "$elf_header" | awk -F', ' '/Data:/{print$2}')
+byte_order=$(printf '%s\n' "$elf_header" | awk -F', ' '/Data:/{print $2}')
 
 entry_point_address=$(printf '%s\n' "$elf_header" | awk -F':' '/Entry point address:/{gsub(/^[[:space:]]+/, "", $2); print $2}')
 
