@@ -5,3 +5,5 @@ re_fundamentals/target_binary_2
 static_analysis/main0
 static_analysis/strings_unique.txt
 static_analysis/main1
+static_analysis/decrypt_flag.py
+static_analysis/main02
