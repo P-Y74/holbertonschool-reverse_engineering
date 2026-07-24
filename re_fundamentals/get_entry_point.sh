@@ -17,7 +17,7 @@ if ! elf_header=$(LC_ALL=C readelf -h "$file_name" 2>/dev/null); then
     exit 1
 fi
 
-magic_number=$(printf '%s\n' "$elf_header" | awk -F'Magic:[[:space:]]*' '/Magic:/{print $2}')
+magic_number=$(printf '%s\n' "$elf_header" | awk -F'Magic:[[:space:]]*' '/Magic:/{print $2}' | sed 's/[[:blank:]]*$//')
 
 class=$(printf '%s\n' "$elf_header" | awk -F':' '/Class:/{gsub(/^[[:space:]]+/, "", $2); print $2}')
 
